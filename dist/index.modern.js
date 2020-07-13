@@ -1,26 +1,24 @@
 import React from 'react';
 
-const ExampleComponent = props => {
-  const {
-    bgcolor,
-    completed
-  } = props;
-  const containerStyles = {
+var ExampleComponent = function ExampleComponent(props) {
+  var bgcolor = props.bgcolor,
+      completed = props.completed;
+  var containerStyles = {
     height: 20,
     width: '100%',
     backgroundColor: '#e0e0de',
     borderRadius: 50,
     margin: 50
   };
-  const fillerStyles = {
+  var fillerStyles = {
     height: '100%',
-    width: `${completed}%`,
+    width: completed + "%",
     backgroundColor: bgcolor,
     transition: 'width 1s ease-in-out',
     borderRadius: 'inherit',
     textAlign: 'right'
   };
-  const labelStyles = {
+  var labelStyles = {
     padding: 5,
     color: 'white',
     fontWeight: 'bold'
@@ -31,7 +29,7 @@ const ExampleComponent = props => {
     style: fillerStyles
   }, /*#__PURE__*/React.createElement("span", {
     style: labelStyles
-  }, `${completed}%`)));
+  }, completed + "%")));
 };
 
 export default ExampleComponent;
